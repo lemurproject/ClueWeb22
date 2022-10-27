@@ -1,0 +1,5 @@
+beautifulsoup4==4.9.3
+lxml==4.8.0
+protobuf==3.20.1
+soupsieve==2.0.1
+fastzipfile==2.2
