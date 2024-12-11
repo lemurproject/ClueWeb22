@@ -78,3 +78,10 @@ Directories accessed: ClueWeb22/outlink
 ```
 clueweb_api.get_outlinks()
 ```
+
+### How to get topics
+This function returns the topics assigned to a page as a list.   
+Directories accessed: ClueWeb22/vdom
+```
+clueweb_api.topics()
+```
