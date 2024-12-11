@@ -172,6 +172,21 @@ class ClueWeb22Api:
                 return record
 
 
+    def get_topics(self):
+        cw22id = self.cw22id
+        cw22root_path = self.cw22root_path
+        base_filename = self.get_base_filename_by_id(cw22id, cw22root_path, file_type='vdom')
+        vdom_path = base_filename + '.zip'
+
+        with zipfile.ZipFile(vdom_path, 'r') as z:
+            filename = cw22id + '.bin'
+            with z.open(filename) as f:
+                data = f.read()
+                annotate_html = AnnotateHtml()
+                annotate_html.ParseFromString(data)
+                return(list(annotate_html.topic))
+
+    
     def get_clean_text(self):
         record = self.get_json_record('txt')
         return record
